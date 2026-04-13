@@ -29,7 +29,7 @@ export default function Hero() {
               <span className="text-gradient">precisión extrema</span>
             </h1>
             <p className="hero-description delay-1">
-              MecaniFlow integra órdenes de compra, control de inventario en tiempo real y flujo de trabajo mecánico en una sola plataforma rápida y poderosa.
+              Tunea tu Tarro integra órdenes de compra, control de inventario en tiempo real y flujo de trabajo mecánico en una sola plataforma rápida y poderosa.
             </p>
             <div className="hero-actions delay-2">
               <button className="btn-primary" style={{ padding: '16px 36px', fontSize: '1.1rem' }}>
