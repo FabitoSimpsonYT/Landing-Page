@@ -1,111 +1,197 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+/* ESTILOS BÁSICOS (CSS)
+   Aquí le damos color y forma a nuestra página web 
+*/
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
+/* 1. Todo el cuerpo de la página */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* Fondo oscuro inspirado en la referencia */
+  color: white; /* Texto blanco en todo el documento */
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+/* 2. El encabezado negro de arriba */
+.encabezado {
+  background-color: #222222; /* Negro */
+  color: white; /* Letra blanca */
+  display: flex; /* Esto sirve para poner elementos uno al lado del otro */
+  justify-content: space-between; /* Separa el título a la izquierda y menú a la derecha */
+  align-items: center; /* Centra los elementos de arriba a abajo */
+  padding: 10px 40px; /* Espacio por dentro: arriba/abajo y lados */
+}
+
+/* Los enlaces de navegación (Inicio, Servicios, etc.) */
+.encabezado nav a {
+  color: white;
+  text-decoration: none; /* Quita la rayita de abajo del enlace */
+  margin-left: 20px; /* Separación entre cada enlace */
+}
+
+/* 3. La sección principal */
+.seccion-principal {
+  background-color: #111111; /* Fondo muy oscuro estilo Fortnite */
+  padding: 60px 40px;
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  justify-content: center;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.seccion-principal-contenido {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1250px; /* Ancho máximo para centrar el contenido */
+  width: 100%;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+.seccion-principal-imagen {
+  flex: 1;
+  max-width: 55%; /* La imagen ocupa algo más de la mitad, como en la referencia */
+}
+
+.imagen-con-degradado {
+  width: 100%;
+  height: 480px; /* Hacemos que sea más alta para que se vea bien el bus */
+  border-radius: 10px; /* Bordes redondeados */
+  /* El degradado solicitado de blanco a negro en multiply para oscurecer la base de la tarjeta */
+  background-image: linear-gradient(to bottom, white 0%, black 100%), url('/IMG_20241009_170719.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombrita para que resalte la tarjeta */
+}
+
+.seccion-principal-texto h2 {
+  font-size: 38px;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: 1px; /* Estilo de título de Fortnite */
+}
+
+.seccion-principal-texto p {
+  font-size: 16px;
+  color: #a0a0a0; /* Gris claro */
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.botones-accion {
+  display: flex;
+  gap: 15px;
+}
+
+.boton-blanco {
+  background-color: #e0e0e0;
+  color: #111;
+  font-weight: 900;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.boton-amarillo {
+  background-color: #fce300; /* Amarillo estilo Fortnite */
+  color: #111;
+  font-weight: 900;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .seccion-principal-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .seccion-principal-imagen {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .seccion-principal-texto {
+    text-align: center;
+  }
+  
+  .seccion-principal-texto h2 {
+    font-size: 28px;
+  }
+
+  .seccion-principal-texto p {
+    margin: 0 auto 30px;
+  }
+  
+  .botones-accion {
+    justify-content: center;
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+/* 4. Sección de características (las 3 cajitas) */
+.seccion-caracteristicas {
+  text-align: center;
+  padding: 80px 20px;
+  /* Usando la segunda imagen de los buses */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/IMG_20241009_170745.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.seccion-caracteristicas h2 {
+  font-size: 38px;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.lista-cajas {
+  display: flex; /* Pone las cajas una al lado de la otra */
+  justify-content: center; /* Las centra en la pantalla */
+  gap: 30px; /* Espacio entre cada caja */
+  margin-top: 30px;
+}
+
+.caja {
+  background-color: rgba(17, 17, 17, 0.85); /* Fondo oscuro semitransparente estilo el Hero */
+  border: 1px solid #333333; /* Borde sutil oscuro */
+  border-radius: 10px;
+  padding: 30px 20px;
+  width: 280px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.5); /* Sombrita más pronunciada */
+  color: #ffffff;
+  backdrop-filter: blur(5px); /* Efecto cristal para que se vea elegante sobre el bus */
+}
+
+.caja h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.caja p {
+  color: #a0a0a0; /* Gris claro como en la tarjeta superior */
+  line-height: 1.6;
+}
+
+/* 5. El pie de página gris oscuro de hasta abajo */
+.pie-de-pagina {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
 }
