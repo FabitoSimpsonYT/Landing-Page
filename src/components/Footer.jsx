@@ -1,4 +1,5 @@
 import './Footer.css';
+import { FaTiktok, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -6,12 +7,23 @@ export default function Footer() {
       <div className="container footer-content">
         <div className="footer-brand">
           <div className="logo" style={{ marginBottom: '1rem' }}>
-            <span className="logo-icon">M</span>
-            <span className="logo-text">Mecani<span className="text-gradient">Flow</span></span>
+            <span className="logo-icon">T</span>
+            <span className="logo-text">Tunea tu <span className="text-gradient">Tarro</span></span>
           </div>
           <p className="footer-desc">
             El sistema operativo definitivo para talleres mecánicos que buscan precisión, velocidad y control total.
           </p>
+          <div className="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaInstagram />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaTiktok />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
         
         <div className="footer-links">
@@ -38,7 +50,7 @@ export default function Footer() {
       
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} MecaniFlow. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Tunea tu Tarro. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
